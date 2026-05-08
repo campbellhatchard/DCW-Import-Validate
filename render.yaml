@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: dcw-import-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run main.py --server.port $PORT --server.address 0.0.0.0
+    # The Render free tier supports web services with inbound HTTP traffic.
+    # If you use a database or other services, define them here and set
+    # environment variables accordingly.
